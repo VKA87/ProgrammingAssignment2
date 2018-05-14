@@ -2,18 +2,17 @@
 ##
 ## - makeCacheMatrix creates a matrix
 ##
-## - cacheSolve returns the inverse of matrix
+## - cacheSolve returns the inverse of the matrix
 
 ## makeCacheMatrix creates a matrix and returns a list of 4 functions:
 ## set(x) -- set the value of the matrix
 ## get() -- retrieve the value of the matrix
 ## setinv(x) -- set the inverse of the matrix
-## getinv(x) -- retrieve the inverse of a matrix
+## getinv() -- retrieve the inverse of a matrix
 
 makeCacheMatrix <- function(x = matrix()) {
         
         x.inv <- NULL
-        
         set <- function(y){
                 x <<- y
                 x.inv <<- NULL
@@ -29,9 +28,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve return the inverse of a makeCacheMatrix type matrix
-## if the inverse has already been computed cacheSolve retrieves and returns the inverse
-## if the inverse has not been computed, cacheSolve computes it, store it in makeCacheMatrix and return the inverse
+## cacheSolve return the inverse of a makeCacheMatrix type matrix:
+## - if the inverse has already been computed cacheSolve retrieves and returns the inverse
+## - if the inverse has not been computed, cacheSolve computes it, store it in makeCacheMatrix and returns the inverse
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
