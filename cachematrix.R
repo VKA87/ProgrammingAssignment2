@@ -28,10 +28,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve return the inverse of a makeCacheMatrix type matrix:
-## - if the inverse has already been computed cacheSolve retrieves and returns the inverse
-## - if the inverse has not been computed, cacheSolve computes it, store it in makeCacheMatrix and returns the inverse
-
+## cacheSolve returns the inverse of a makeCacheMatrix type matrix
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         inv = x$getinv()
@@ -42,7 +39,7 @@ cacheSolve <- function(x, ...) {
         }
         
         data <- x$get()
-        inv <- solve(data)
+        inv <- solve(data, ...)
         x$setinv(inv)
         inv
 }
